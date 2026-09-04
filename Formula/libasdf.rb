@@ -1,8 +1,8 @@
 class Libasdf < Formula
   desc "C implementation of the ASDF file format"
   homepage "https://libasdf.readthedocs.io/"
-  url "https://github.com/asdf-format/libasdf/releases/download/0.1.0rc2/libasdf-0.1.0rc2.tar.gz"
-  sha256 "121a7a1a6ad162a2ca45568465ad53ad640d6b7932c02a312eb4b5a04c083f79"
+  url "https://github.com/asdf-format/libasdf/releases/download/0.1.0/libasdf-0.1.0.tar.gz"
+  sha256 "efe0ad1938ee84502fea821afebe3e57e7abe9d19232c725229a93bd439cb498"
   license "BSD-3-Clause"
 
   head do
