@@ -5,6 +5,12 @@ class Libasdf < Formula
   sha256 "efe0ad1938ee84502fea821afebe3e57e7abe9d19232c725229a93bd439cb498"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://github.com/asdf-format/homebrew-tap/releases/download/libasdf-0.1.0"
+    sha256 cellar: :any, arm64_tahoe:  "b37c23ea90f0de23c9cee0564cbc7b9199f22a70cb060fa5afd3d4fa1add312f"
+    sha256 cellar: :any, x86_64_linux: "4d12c84d09792a7efef3389f9ace20bb612c5c9a8c81b95fea6450ab167b39ff"
+  end
+
   head do
     url "https://github.com/asdf-format/libasdf.git", branch: "main"
 
