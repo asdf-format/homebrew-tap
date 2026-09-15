@@ -7,8 +7,8 @@ class Libasdf < Formula
 
   bottle do
     root_url "https://github.com/asdf-format/homebrew-tap/releases/download/libasdf-0.2.0"
-    sha256 cellar: :any, arm64_tahoe:  "b37c23ea90f0de23c9cee0564cbc7b9199f22a70cb060fa5afd3d4fa1add312f"
-    sha256 cellar: :any, x86_64_linux: "4d12c84d09792a7efef3389f9ace20bb612c5c9a8c81b95fea6450ab167b39ff"
+    sha256 cellar: :any, arm64_tahoe:  "ce5c02a62025a7cd2b88e38eb821075f0cd6896a4075778e58d17db668d872cc"
+    sha256 cellar: :any, x86_64_linux: "ad25f13f9a8041b081b9880ff332ae4fbe12fb4878f07a1ea9643f8c84ab9e9c"
   end
 
   head do
