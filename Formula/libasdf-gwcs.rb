@@ -5,6 +5,12 @@ class LibasdfGwcs < Formula
   sha256 "d671b94d53fe66dd4a9794d511b768c2c7f77c7d571af01ea3db34d82c534679"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://github.com/asdf-format/homebrew-tap/releases/download/libasdf-gwcs-0.1.0"
+    sha256 cellar: :any, arm64_tahoe:  "a6053184cc8519655dd9819333735b08474d0f79561070169f4e2a98b9b91d85"
+    sha256 cellar: :any, x86_64_linux: "50a736cc42a88d34593070066ad1da3889e19c0e8b21cc50a04c0496339939d3"
+  end
+
   head do
     url "https://github.com/asdf-format/libasdf-gwcs.git", branch: "main"
 
