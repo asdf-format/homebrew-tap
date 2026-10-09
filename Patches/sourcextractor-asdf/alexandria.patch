@@ -1,0 +1,38 @@
+Boost >= 1.89 no longer ships the header-only `boost_system` stub library.
+
+diff --git a/GridContainer/CMakeLists.txt b/GridContainer/CMakeLists.txt
+--- a/GridContainer/CMakeLists.txt
++++ b/GridContainer/CMakeLists.txt
+@@ -1,7 +1,7 @@
+ elements_subdir(GridContainer)
+ 
+ elements_depends_on_subdirs(ElementsKernel Table XYDataset)
+-find_package(Boost REQUIRED COMPONENTS system serialization filesystem)
++find_package(Boost REQUIRED COMPONENTS serialization filesystem)
+ find_package(CCfits)
+ 
+ #===== Libraries ===============================================================
+diff --git a/SourceCatalog/CMakeLists.txt b/SourceCatalog/CMakeLists.txt
+--- a/SourceCatalog/CMakeLists.txt
++++ b/SourceCatalog/CMakeLists.txt
+@@ -5,7 +5,7 @@ elements_depends_on_subdirs(GridContainer)
+ 
+ elements_depends_on_subdirs(ElementsKernel)
+ 
+-find_package(Boost REQUIRED COMPONENTS filesystem thread system)
++find_package(Boost REQUIRED COMPONENTS filesystem thread)
+ 
+ 
+ #===== Libraries ===============================================================
+diff --git a/XYDataset/CMakeLists.txt b/XYDataset/CMakeLists.txt
+--- a/XYDataset/CMakeLists.txt
++++ b/XYDataset/CMakeLists.txt
+@@ -2,7 +2,7 @@ elements_subdir(XYDataset)
+ elements_depends_on_subdirs(Table)
+ elements_depends_on_subdirs(ElementsKernel)
+ 
+-find_package(Boost REQUIRED COMPONENTS filesystem thread system)
++find_package(Boost REQUIRED COMPONENTS filesystem thread)
+ find_package(CCfits)
+ 
+ #===== Libraries ===============================================================

@@ -1,0 +1,65 @@
+Build fixes for Elements 6.3.7 with current Homebrew toolchains:
+
+- cmake/ElementsLocations.cmake: `distutils` was removed in Python 3.12;
+  use the equivalent `sysconfig` call to find the site-packages suffix.
+- cmake/ElementsProjectConfig.cmake: CMake 4 removed the OLD behaviour of
+  policy CMP0042 (macOS @rpath install names). Elements sets
+  `CMAKE_INSTALL_NAME_DIR` anyway, so install names stay absolute.
+- ElementsKernel/src/Lib/ModuleInfo.cpp: the macOS branch uses an undeclared
+  `path` type and does not compile. Same fix as the `macos_path.patch` in
+  https://github.com/astrorama/elements-feedstock
+- ElementsKernel/CMakeLists.txt: Boost >= 1.89 no longer ships the
+  header-only `boost_system` stub library.
+
+diff --git a/ElementsKernel/CMakeLists.txt b/ElementsKernel/CMakeLists.txt
+--- a/ElementsKernel/CMakeLists.txt
++++ b/ElementsKernel/CMakeLists.txt
+@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
+ 
+ elements_subdir(ElementsKernel)
+ 
+-find_package(Boost REQUIRED COMPONENTS filesystem thread program_options system regex)
++find_package(Boost REQUIRED COMPONENTS filesystem thread program_options regex)
+ find_package(Log4CPP REQUIRED)
+ 
+ #---Libraries---------------------------------------------------------------
+diff --git a/ElementsKernel/src/Lib/ModuleInfo.cpp b/ElementsKernel/src/Lib/ModuleInfo.cpp
+--- a/ElementsKernel/src/Lib/ModuleInfo.cpp
++++ b/ElementsKernel/src/Lib/ModuleInfo.cpp
+@@ -240,11 +240,10 @@ const vector<string> linkedModules() {
+ Path::Item getExecutablePath() {
+ 
+ #ifdef __APPLE__
+-  path         self_proc{};
+   char         pathbuf[PATH_MAX + 1];
+   unsigned int bufsize = sizeof(pathbuf);
+   _NSGetExecutablePath(pathbuf, &bufsize);
+-  path self_exe = path(string(pathbuf));
++  Path::Item self_exe = Path::Item(string(pathbuf));
+ #else
+ 
+   Path::Item self_exe = getSelfProc() / "exe";
+diff --git a/cmake/ElementsLocations.cmake b/cmake/ElementsLocations.cmake
+--- a/cmake/ElementsLocations.cmake
++++ b/cmake/ElementsLocations.cmake
+@@ -183,7 +183,7 @@ if(SQUEEZED_INSTALL)
+   find_package(PythonInterp ${PYTHON_EXPLICIT_VERSION})
+ 
+   execute_process(COMMAND "${PYTHON_EXECUTABLE}" "-c"
+-                  "from distutils.sysconfig import get_python_lib; print(get_python_lib(plat_specific=True, prefix='${CMAKE_INSTALL_PREFIX}').replace('${CMAKE_INSTALL_PREFIX}/',''))"
++                  "import sysconfig; print(sysconfig.get_path('platlib', 'posix_prefix', {'platbase': '${CMAKE_INSTALL_PREFIX}'}).replace('${CMAKE_INSTALL_PREFIX}/',''))"
+                   OUTPUT_VARIABLE PYTHON_INSTALL_SUFFIX
+                   ERROR_QUIET
+                   OUTPUT_STRIP_TRAILING_WHITESPACE)
+diff --git a/cmake/ElementsProjectConfig.cmake b/cmake/ElementsProjectConfig.cmake
+--- a/cmake/ElementsProjectConfig.cmake
++++ b/cmake/ElementsProjectConfig.cmake
+@@ -18,7 +18,7 @@ if(NOT CMAKE_VERSION VERSION_LESS 3.0) # i.e CMAKE_VERSION >= 3.0
+     cmake_policy(SET CMP0026 OLD)
+   endif()
+   if ("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
+-    cmake_policy(SET CMP0042 OLD)
++    cmake_policy(SET CMP0042 NEW)
+   endif()
+ endif()
+ 
