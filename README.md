@@ -8,6 +8,7 @@ Homebrew formulae for the [ASDF](https://www.asdf-format.org/) project.
 | ------- | ----------- |
 | [`libasdf`](Formula/libasdf.rb) | C implementation of the ASDF file format ([docs](https://libasdf.readthedocs.io/), [source](https://github.com/asdf-format/libasdf)) |
 | [`libasdf-gwcs`](Formula/libasdf-gwcs.rb) | GWCS plugin for libasdf ([docs](https://libasdf-gwcs.readthedocs.io/), [source](https://github.com/asdf-format/libasdf-gwcs)) |
+| [`sourcextractor-asdf`](Formula/sourcextractor-asdf.rb) | [SourceXtractor++](https://github.com/astrorama/SourceXtractorPlusPlus) with ASDF support (preview; [source](https://github.com/embray/SourceXtractorPlusPlus/tree/asdf)) |
 
 ## Installation
 
@@ -35,6 +36,12 @@ brew "<formula>"
 [asdf version manager](https://asdf-vm.com/) formula in homebrew-core. The
 formula therefore declares `conflicts_with "asdf"`; the two cannot be linked at
 the same time.
+
+### A note on `sourcextractor-asdf`
+
+`sourcextractor-asdf` is a temporary preview of SourceXtractor++ built from
+a fork that adds ASDF support. It will be removed from this tap once ASDF
+support lands in upstream SourceXtractor++.
 
 ### Platform support
 
