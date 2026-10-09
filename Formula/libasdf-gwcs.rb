@@ -6,9 +6,9 @@ class LibasdfGwcs < Formula
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://github.com/asdf-format/homebrew-tap/releases/download/libasdf-gwcs-0.1.0"
-    sha256 cellar: :any, arm64_tahoe:  "a6053184cc8519655dd9819333735b08474d0f79561070169f4e2a98b9b91d85"
-    sha256 cellar: :any, x86_64_linux: "50a736cc42a88d34593070066ad1da3889e19c0e8b21cc50a04c0496339939d3"
+    root_url "https://github.com/asdf-format/homebrew-tap/releases/download/libasdf-gwcs-0.2.0"
+    sha256 cellar: :any, arm64_tahoe:  "066c657a0cf446dcdb19c3bc0e424608e611f469032fe97db12c7afc6294af34"
+    sha256 cellar: :any, x86_64_linux: "fa4d800b1c59bc4c5bb37f031d9b1951e1b949f9d355aad662509da21cc0863e"
   end
 
   head do
