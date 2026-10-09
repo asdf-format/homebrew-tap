@@ -1,8 +1,8 @@
 class LibasdfGwcs < Formula
   desc "GWCS plugin for libasdf"
   homepage "https://libasdf-gwcs.readthedocs.io/"
-  url "https://github.com/asdf-format/libasdf-gwcs/releases/download/0.1.0/libasdf-gwcs-0.1.0.tar.gz"
-  sha256 "d671b94d53fe66dd4a9794d511b768c2c7f77c7d571af01ea3db34d82c534679"
+  url "https://github.com/asdf-format/libasdf-gwcs/releases/download/0.2.0/libasdf-gwcs-0.2.0.tar.gz"
+  sha256 "d0ae325dd46a215afbe6bc1bfed82a6445e5163aff92071f99c76d5cdfb1c0b7"
   license "BSD-3-Clause"
 
   bottle do
