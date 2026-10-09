@@ -6,9 +6,9 @@ class Libasdf < Formula
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://github.com/asdf-format/homebrew-tap/releases/download/libasdf-0.2.0"
-    sha256 cellar: :any, arm64_tahoe:  "ce5c02a62025a7cd2b88e38eb821075f0cd6896a4075778e58d17db668d872cc"
-    sha256 cellar: :any, x86_64_linux: "ad25f13f9a8041b081b9880ff332ae4fbe12fb4878f07a1ea9643f8c84ab9e9c"
+    root_url "https://github.com/asdf-format/homebrew-tap/releases/download/libasdf-0.2.1"
+    sha256 cellar: :any, arm64_tahoe:  "4d67fd00b76a10860cebf54a9dcbd23ad82dad7ea8c8ed2029c056ec78a2041e"
+    sha256 cellar: :any, x86_64_linux: "89deadb6dac56ac0ad28f97cfc200b8f9d4564131bb5b3ca2d51b746ad08efcf"
   end
 
   head do
