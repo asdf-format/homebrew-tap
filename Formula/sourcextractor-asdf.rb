@@ -7,6 +7,12 @@ class SourcextractorAsdf < Formula
   license "LGPL-3.0-or-later"
   head "https://github.com/embray/SourceXtractorPlusPlus.git", branch: "asdf"
 
+  bottle do
+    root_url "https://github.com/asdf-format/homebrew-tap/releases/download/sourcextractor-asdf-1.2.0-asdf.1"
+    sha256 arm64_tahoe:  "841d1b3fe3dbc916a7b91c58400f0bca615646a6ffe9aa176a97ea7a00aa2d1d"
+    sha256 x86_64_linux: "fa44374b1bd55afbae2d00d285d3a5a4d7a00ebdb35da6d03d91b5b00e617d5c"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "boost"
