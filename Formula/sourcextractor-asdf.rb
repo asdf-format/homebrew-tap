@@ -9,9 +9,9 @@ class SourcextractorAsdf < Formula
   head "https://github.com/embray/SourceXtractorPlusPlus.git", branch: "asdf"
 
   bottle do
-    root_url "https://github.com/asdf-format/homebrew-tap/releases/download/sourcextractor-asdf-1.2.0-asdf.1"
-    sha256 arm64_tahoe:  "841d1b3fe3dbc916a7b91c58400f0bca615646a6ffe9aa176a97ea7a00aa2d1d"
-    sha256 x86_64_linux: "fa44374b1bd55afbae2d00d285d3a5a4d7a00ebdb35da6d03d91b5b00e617d5c"
+    root_url "https://github.com/asdf-format/homebrew-tap/releases/download/sourcextractor-asdf-1.2.0-asdf.1_1"
+    sha256 arm64_tahoe:  "d70c60b0ab4d9bb3f756975b448c905d576e0aeefdf7dd55f8bac4848bfe8409"
+    sha256 x86_64_linux: "e7f8130b213706b339b99fc06b4c9c376e76e65d3e9ac842321a20b2f2b3792a"
   end
 
   depends_on "cmake" => :build
