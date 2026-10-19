@@ -5,6 +5,7 @@ class SourcextractorAsdf < Formula
   version "1.2.0-asdf.1"
   sha256 "6a6d5371d5965d1fc7f6e1528b20540a305c4f9f95ed40ad34c994f7fd1b292c"
   license "LGPL-3.0-or-later"
+  revision 1
   head "https://github.com/embray/SourceXtractorPlusPlus.git", branch: "asdf"
 
   bottle do
@@ -26,7 +27,7 @@ class SourcextractorAsdf < Formula
   depends_on "libfyaml"
   depends_on "log4cpp"
   depends_on "numpy"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "readline"
   depends_on "wcslib"
 
@@ -130,7 +131,7 @@ class SourcextractorAsdf < Formula
       Python configuration files that use the world coordinate helpers (e.g.
       `get_world_parameters()`) need astropy, which is not installed by this
       formula. To install it for Homebrew's Python:
-        python3.14 -m pip install --user --break-system-packages astropy
+        python3.15 -m pip install --user --break-system-packages astropy
     EOS
   end
 
