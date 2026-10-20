@@ -1,11 +1,10 @@
 class SourcextractorAsdf < Formula
   desc "SourceXtractor++ with ASDF file format support (preview)"
   homepage "https://github.com/embray/SourceXtractorPlusPlus/tree/asdf"
-  url "https://github.com/embray/SourceXtractorPlusPlus/archive/7ac989b47a5ebb1ad0ffbe3e31a614a3408188a9.tar.gz"
-  version "1.2.0-asdf.1"
-  sha256 "6a6d5371d5965d1fc7f6e1528b20540a305c4f9f95ed40ad34c994f7fd1b292c"
+  url "https://github.com/embray/SourceXtractorPlusPlus/archive/69d9525dde268bda61a1c67d9d7dffc2387fd8ae.tar.gz"
+  version "1.2.0-asdf.2"
+  sha256 "f40073a48397ffd06380b2a99ae8eaa38586f96ff98eedd05b6f49a7bd652b89"
   license "LGPL-3.0-or-later"
-  revision 1
   head "https://github.com/embray/SourceXtractorPlusPlus.git", branch: "asdf"
 
   bottle do
@@ -168,34 +167,6 @@ class SourcextractorAsdf < Formula
 end
 
 __END__
---- a/SEImplementation/python/sourcextractor/config/model_fitting.py
-+++ b/SEImplementation/python/sourcextractor/config/model_fitting.py
-@@ -28,8 +28,6 @@
-     import pyston
- except ImportError:
-     warnings.warn('Could not import pyston: running outside sourcextractor?', ImportWarning)
--from astropy import units as u
--from astropy.coordinates import SkyCoord
-
- from .measurement_images import MeasurementGroup
-
-@@ -854,6 +852,16 @@
-     -------
-     SkyCoord
-     """
-+    # astropy is only needed here, so don't make it a hard dependency of the whole config API
-+    try:
-+        from astropy import units as u
-+        from astropy.coordinates import SkyCoord
-+    except ImportError as exc:
-+        raise ImportError(
-+            'astropy is required for computing world coordinate angles and separations '
-+            '(e.g. get_world_parameters()); install it with: pip install astropy'
-+        ) from exc
-+
-     coord = pixel_to_world_coordinate(x, y)
-     sky_coord = SkyCoord(ra=coord.ra * u.degree, dec=coord.dec * u.degree)
-     return sky_coord
 --- a/SEMain/src/lib/ProgressNCurses.cpp
 +++ b/SEMain/src/lib/ProgressNCurses.cpp
 @@ -19,6 +19,7 @@
