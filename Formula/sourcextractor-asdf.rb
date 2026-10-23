@@ -1,9 +1,9 @@
 class SourcextractorAsdf < Formula
   desc "SourceXtractor++ with ASDF file format support (preview)"
   homepage "https://github.com/embray/SourceXtractorPlusPlus/tree/asdf"
-  url "https://github.com/embray/SourceXtractorPlusPlus/archive/69d9525dde268bda61a1c67d9d7dffc2387fd8ae.tar.gz"
+  url "https://github.com/embray/SourceXtractorPlusPlus/archive/fb60be0cbdbc5ae359cff81a8b17ef53d6b99769.tar.gz"
   version "1.2.0-asdf.2"
-  sha256 "f40073a48397ffd06380b2a99ae8eaa38586f96ff98eedd05b6f49a7bd652b89"
+  sha256 "d8bc30c06a0947e5e70ad9a8f9e8a6e6ed8b42a860d962b25d6947c975d18c4b"
   license "LGPL-3.0-or-later"
   head "https://github.com/embray/SourceXtractorPlusPlus.git", branch: "asdf"
 
