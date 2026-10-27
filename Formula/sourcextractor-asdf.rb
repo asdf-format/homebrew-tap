@@ -9,9 +9,9 @@ class SourcextractorAsdf < Formula
 
   bottle do
     root_url "https://github.com/asdf-format/homebrew-tap/releases/download/sourcextractor-asdf-1.2.0-asdf.2"
-    rebuild 1
-    sha256 arm64_tahoe:  "fc29162706a4317f7b6d9483e50096812425fee2411a3146b5616d26e8148243"
-    sha256 x86_64_linux: "8bb382d6bd96d403f240545f5d46b88907138c10dc88e6d1e6d01823afe56216"
+    rebuild 2
+    sha256 arm64_tahoe:  "5429ec5dcebeaf27a9a8a02c566d0ac7f53b86854d6be911972ca575800d215e"
+    sha256 x86_64_linux: "632ea7f52f68659ee55fb3be33ab3b0c393e2ecf996e4bafbbc6042e73406de0"
   end
 
   depends_on "cmake" => :build
